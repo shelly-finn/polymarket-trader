@@ -1,40 +1,70 @@
 # Heartbeat - Revenue & Opportunity Loop
 
-**Goal:** Iterate on money-making plans every 30 minutes.
+**Goal:** Every 30 minutes, advance revenue ideas from concept → prototype → implementation.
 
-## Each Heartbeat Checks
+## Each Heartbeat Does
 
-1. **Gmail Inbox** — Search recent emails (last 24h) for:
-   - New leads, proposals, inquiries, or partnership offers
-   - Requests for work, consulting, sponsorship
-   - Keywords: "interested", "opportunity", "collaboration", "budget", "rate", "availability"
+1. **Scan for Leads** (2 min)
+   - Gmail: search for recent business/partnership inquiries
+   - Keywords: interested, opportunity, collaboration, budget, rate, availability
+   - If found: extract details and add to opportunities.json
 
-2. **Opportunity Ideas** — If nothing new in inbox:
-   - Generate 1 micro-revenue idea based on current skills/context
-   - Append to `revenue-ideas.md` with timestamp, idea title, brief description, and potential next step
-   - Ideas can be: service offerings, products, partnerships, automation to sell, consulting niches, side gigs
+2. **Advance Active Ideas** (10 min)
+   - Pick the highest-priority idea (status: idea → prototype → launched)
+   - Execute ONE concrete step toward implementation:
+     - **Idea stage**: Write service description, pitch, technical spec
+     - **Prototype stage**: Build working code, landing page, email template, automation script
+     - **Implementation**: Deploy, publish, or activate the working version
+   - Create actual deliverables (code, docs, assets) in projects/
 
-3. **Action Plan** — For each idea (found or generated):
-   - If actionable now: create a small task (document, draft email, or research link)
-   - Save drafts/notes locally in workspace or to Drive (Docs)
-   - Do NOT send emails or publish without explicit approval
+3. **Generate New Ideas** (3 min)
+   - If no leads and all ideas have tasks: generate 1 new revenue idea
+   - Ideas must have: description, target market, implementation plan, effort estimate
 
-4. **Report Back** — Summarize:
-   - What was found (leads, ideas, drafts created)
-   - Next concrete step (who to contact, research needed, setup required)
-   - Link to any created documents or drafts
+4. **Report Back** (5 min)
+   - What was completed in this heartbeat?
+   - Links to created code/docs/prototypes
+   - Next concrete step
+   - Blockers or dependencies
 
-## Tools Available
+## Implementation-Focused Actions
 
-- **gog**: Gmail, Drive, Docs, Sheets, Calendar, Contacts
-- **gemini**: Use only for brainstorming complex revenue models or coding automation ideas
-- **web_search**: Market research, pricing benchmarks, competitor analysis
-- **Local files**: revenue-ideas.md, draft templates, notes
-- **Root access**: Can set up automation, cron jobs, scripts to generate revenue streams
+Examples of heartbeat work:
+- Write Python script to automate a process (and test it)
+- Create email outreach template (with actual copy)
+- Build a landing page (HTML/CSS in projects/)
+- Write API integration (code in projects/)
+- Create a service offering document (in projects/)
+- Set up automation workflow (gog commands, cron jobs)
+- Generate leads list with contact details
+- Draft sales pitch / value proposition
+- Create pricing model / package tiers
 
-## Notes
+NOT just "research" or "plan" — actual executable deliverables.
 
-- Focus on **actionable** micro-steps, not just ideas
-- Prioritize: incoming leads > existing opportunities > new idea generation
-- Keep moving fast — if stuck, generate 2-3 alternatives and pick the quickest to prototype
-- Document all decisions in local files for review
+## Workflow States
+
+Each opportunity moves through:
+1. **idea** - Concept, no implementation
+2. **spec** - Technical or business specification written
+3. **prototype** - Working code/template/doc created
+4. **testing** - Test the implementation with sample data/users
+5. **launched** - Live, deployed, or activated
+6. **completed** - Revenue generated or milestone hit
+
+## Tools for Implementation
+
+- **gog**: Create docs, sheets, email drafts; send when approved
+- **bash/python**: Write scripts, automation, integrations
+- **git**: Version control; commit every completed step
+- **web_search**: Research for building things faster
+- **gemini**: Only for complex code generation or architecture decisions
+- **Local files**: Create projects in projects/ folder
+
+## Success Metrics
+
+- Ideas moving through stages (idea → prototype → launched)
+- Actual code/content created per heartbeat
+- Leads converted or contacted
+- Revenue opportunities with next-step clarity
+- Committed changes pushed to git
