@@ -1,0 +1,33 @@
+# Sensitive/Auto-generated
+*.log
+*.swp
+.DS_Store
+__pycache__/
+*.pyc
+.env
+.venv/
+node_modules/
+
+# Databases (can include sensitive info)
+databases/*.json
+databases/*.db
+databases/*.sqlite
+
+# Drafts (work in progress, not ready to commit)
+drafts/
+temp/
+
+# Research artifacts (large files)
+research/*.pdf
+research/*.csv
+
+# Assets (can be large)
+assets/*.mp4
+assets/*.mov
+assets/*.png
+assets/*.jpg
+
+# Keep structured files only
+!databases/README.md
+!scripts/
+!projects/
