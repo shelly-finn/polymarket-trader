@@ -8,42 +8,47 @@
 - Updated market intelligence
 - Commit to GitHub with timestamp and changes
 
-## Each Heartbeat Does
+## Each Heartbeat (My Direct Work)
 
-### 1. Market Intelligence (3 min)
-- Scan active markets for new opportunities
-- Track price movements on watched markets
-- Identify unusual volume or price swings
-- Log market state changes to `data/market_history.json`
-- **OUTPUT:** Updated cache + signals file
+### 1. Market Scan (5 min)
+- What markets are moving right now?
+- What's happening with watched markets (Ukraine/Russia, BTC, Fed, AI)?
+- Any news that changes probabilities?
+- **OUTPUT:** Market selection for deep dive
 
-### 2. Research & Analysis (10 min)
-Pick ONE market and do deep research:
-- **News correlation**: What events could move this market?
-- **Resolution criteria**: How exactly does this resolve? Edge cases?
-- **Market structure**: Who's trading? Liquidity depth? Spread?
-- **Historical patterns**: Similar past markets? How did they resolve?
-- **Contrarian check**: Why might the crowd be wrong?
-- **Price analysis**: Why is it priced where it is? Mispriced?
+### 2. Deep Research (10 min)
+I analyze ONE market thoroughly:
+- **News & events**: What actually moves this market? Current news?
+- **Resolution mechanics**: How does this resolve YES vs NO? Edge cases?
+- **Base rates**: Similar past events — how often did they happen?
+- **Price analysis**: Why is market at this bid? Is it mispriced?
+- **My edge**: Why do I think I'm right and market is wrong?
+- **Contrarian view**: What would prove me wrong?
 
-Save research to `research/MARKET_ID.md`
-**OUTPUT:** Markdown file with timestamp, sources, analysis
+Write analysis to `research/MARKET_ID.md` with:
+- Timestamp, sources, my reasoning
+- Entry logic (why BET on this now)
+- Exit plan (profit/stop loss targets)
+- Conviction level (high/medium/low)
 
-### 3. Paper Trading + Bet Placement (5 min)
-- Scan open bets: price changes, P&L, resolve if done
-- Find ONE trading signal from market intelligence
-- Place documented paper bet with:
-  - Specific entry reason (edge identified)
-  - Price target (where/why to exit)
-  - Position size
-- **OUTPUT:** New line in paper_bets.json + updated performance.json
+**OUTPUT:** Research doc with my thesis
+
+### 3. Bet Placement (3 min)
+- Place ONE paper bet based on research
+- Entry: My identified edge
+- Amount: $10-30 (betting pool ~$100)
+- Direction: YES or NO with reasoning
+- Track in `data/paper_bets.json`
+
+**OUTPUT:** New bet logged + documented reasoning
 
 ### 4. Commit & Push (2 min)
-- Stage all changes: research/, data/, strategies/
+- Stage changes: research/, data/
 - Commit: `git commit -m "heartbeat: TIMESTAMP — SUMMARY"`
-  - Example: `heartbeat: 2026-02-15T06:35Z — Russia/Ukraine research, placed BTC bet at $68k`
-- Push: `git push origin main`
-- **OUTPUT:** GitHub shows commit activity every heartbeat
+  - Example: `heartbeat: 2026-02-15T06:35Z — Russia/Ukraine escalation risk, placed NO bet at 58%`
+- Push: `git push origin master`
+
+**OUTPUT:** GitHub commit visible to you instantly
 
 ## Research Priorities
 
