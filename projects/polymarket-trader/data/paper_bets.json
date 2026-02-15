@@ -8,5 +8,18 @@
     "entry_price": 0.425,
     "reasoning": "Heartbeat 2026-02-15 06:08 analysis",
     "status": "open"
+  },
+  {
+    "timestamp": "2026-02-15T06:35:00.000000",
+    "market_id": "567687",
+    "question": "Will Russia and Ukraine reach a ceasefire by March 31, 2026?",
+    "direction": "YES",
+    "amount": 20,
+    "entry_price": 0.415,
+    "conviction": "medium-high",
+    "reasoning": "Market underprices diplomatic momentum. Trump policy shift + 7-day hold threshold + February-March window = higher true probability (~67-70%) vs market 41.5%. Base rates show pessimism bias on peace prospects.",
+    "exit_profit_target": 0.65,
+    "exit_stop_loss": 0.25,
+    "status": "open"
   }
 ]
