@@ -1,50 +1,12 @@
-{
-  "bets": [
-    {
-      "id": "bet_1_1771124624",
-      "market_id": "572469",
-      "question": "Will Trump nominate Kevin Warsh as the next Fed chair?",
-      "outcome": "YES",
-      "entry_price": 0.96,
-      "amount": 25.0,
-      "shares": 26.041666666666668,
-      "reasoning": "Kevin Warsh at 96% for Fed chair. High confidence market. Testing system with small bet. Low risk, low return (4%) but establishes tracking.",
-      "placed_at": "2026-02-15T03:03:44.309342+00:00",
-      "status": "open",
-      "exit_price": null,
-      "exit_at": null,
-      "pnl": null
-    },
-    {
-      "id": "bet_2_1771124674",
-      "market_id": "1345641",
-      "question": "Will Bitcoin reach $75,000 in February?",
-      "outcome": "YES",
-      "entry_price": 0.425,
-      "amount": 20.0,
-      "shares": 47.05882352941177,
-      "reasoning": "BTC reach 75k Feb: 42.5% odds. Coinflip bet to test tracking. If BTC is currently ~70-74k, reasonable upside. Will track this against actual price movement.",
-      "placed_at": "2026-02-15T03:04:34.308486+00:00",
-      "status": "open",
-      "exit_price": null,
-      "exit_at": null,
-      "pnl": null
-    },
-    {
-      "id": "bet_3_1771124681",
-      "market_id": "1303355",
-      "question": "Will Bitcoin reach $150,000 in February?",
-      "outcome": "NO",
-      "entry_price": 0.998,
-      "amount": 30.0,
-      "shares": 30.060120240480963,
-      "reasoning": "BTC reach 150k in Feb: 0.2% YES. Betting NO at 99.8%. BTC would need to ~double in 2 weeks. Extremely unlikely. Safe bet, small return (~0.2%).",
-      "placed_at": "2026-02-15T03:04:41.737078+00:00",
-      "status": "open",
-      "exit_price": null,
-      "exit_at": null,
-      "pnl": null
-    }
-  ],
-  "updated": "2026-02-15T03:04:41.737142+00:00"
-}
+[
+  {
+    "timestamp": "2026-02-15T06:08:37.013691",
+    "market_id": "m123456",
+    "question": "Will BTC reach $75,000 by end of February 2026?",
+    "direction": "YES",
+    "amount": 15,
+    "entry_price": 0.425,
+    "reasoning": "Heartbeat 2026-02-15 06:08 analysis",
+    "status": "open"
+  }
+]

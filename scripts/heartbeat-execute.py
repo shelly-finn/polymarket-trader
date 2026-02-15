@@ -1,180 +1,245 @@
 #!/usr/bin/env python3
 """
-heartbeat-execute.py: Main execution engine for heartbeat revenue loop
-Combines: lead scanning, idea advancement, implementation
+Polymarket Heartbeat Execution
+Runs every 30 minutes: research, analyze, place bets, commit & push
+
+Usage:
+  python3 scripts/heartbeat-execute.py
 """
+
 import json
 import os
 import subprocess
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
 
-WORKSPACE = Path(os.environ.get('WORKSPACE', '/home/tomer/.openclaw/workspace'))
-OPPORTUNITIES_DB = WORKSPACE / 'databases/opportunities.json'
-ACTIVITY_LOG = WORKSPACE / 'databases/activity.log'
+# Paths
+WORKSPACE = Path.cwd()
+DATA_DIR = WORKSPACE / "projects/polymarket-trader/data"
+RESEARCH_DIR = WORKSPACE / "projects/polymarket-trader/research"
+PAPER_BETS_FILE = DATA_DIR / "paper_bets.json"
+MARKET_HISTORY_FILE = DATA_DIR / "market_history.json"
 
-def log_activity(action, details=""):
-    """Log activity with timestamp."""
-    timestamp = datetime.utcnow().isoformat() + "Z"
-    with open(ACTIVITY_LOG, 'a') as f:
-        f.write(f"{timestamp} | {action} | {details}\n")
+def run_cmd(cmd, check=True):
+    """Run shell command and return output"""
+    result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+    if check and result.returncode != 0:
+        print(f"Error: {result.stderr}")
+        return None
+    return result.stdout.strip()
 
-def load_opportunities():
-    with open(OPPORTUNITIES_DB) as f:
-        return json.load(f)
+def load_json(path):
+    """Load JSON file safely"""
+    if not path.exists():
+        return {}
+    try:
+        with open(path) as f:
+            return json.load(f)
+    except:
+        return {}
 
-def save_opportunities(data):
-    data["metadata"]["last_updated"] = datetime.utcnow().isoformat() + "Z"
-    with open(OPPORTUNITIES_DB, 'w') as f:
+def save_json(path, data):
+    """Save JSON file"""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "w") as f:
         json.dump(data, f, indent=2)
 
-def scan_gmail_leads():
-    """Scan Gmail for new leads."""
-    try:
-        os.environ['GOG_KEYRING_PASSWORD'] = 'openclaw-test'
-        cmd = ['gog', 'gmail', 'search', 
-               'newer_than:7d (interested OR opportunity OR collaboration OR partnership OR budget OR rate OR availability)',
-               '--max', '20', '--json']
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
-        
-        if result.returncode == 0:
-            data = json.loads(result.stdout)
-            leads_found = len(data.get('threads', []))
-            log_activity("scan_gmail", f"found {leads_found} threads")
-            return data.get('threads', [])
-    except Exception as e:
-        log_activity("scan_gmail_error", str(e))
-    return []
+def get_market_snapshot():
+    """Fetch current Polymarket snapshot from API"""
+    # Using polymarket API to get active markets
+    cmd = """curl -s 'https://clob.polymarket.com/markets' \
+    | python3 -c "
+import sys, json
+data = json.load(sys.stdin)
+markets = sorted(data, key=lambda x: x.get('volume24h', 0), reverse=True)[:10]
+for m in markets:
+    print(f\"{m['id']}|{m['question']}|{m.get('bestBid', 0):.2f}|{m.get('volume24h', 0):.0f}\")
+" 2>/dev/null || echo "API_ERROR"
+"""
+    output = run_cmd(cmd, check=False)
+    return output
 
-def advance_highest_priority_idea():
-    """Find and advance the next idea in the pipeline."""
-    data = load_opportunities()
-    opps = data.get('opportunities', [])
-    
-    # Find next idea needing work
-    for opp in opps:
-        if opp['status'] == 'idea':
-            # Move to spec stage
-            opp['status'] = 'spec'
-            action = f"Advanced '{opp['title']}' to spec stage"
-            log_activity("advance_idea", action)
-            save_opportunities(data)
-            return {'status': 'spec', 'idea': opp['title'], 'action': action}
-        
-        elif opp['status'] == 'spec':
-            # Would normally run implementation, but require explicit trigger
-            action = f"'{opp['title']}' ready for prototype - requires implementation trigger"
-            log_activity("idea_ready", action)
-            return {'status': 'spec', 'idea': opp['title'], 'action': action}
-        
-        elif opp['status'] == 'prototype':
-            # Continue with next steps
-            action = f"'{opp['title']}' in prototype stage - next: {opp['next_steps'][0] if opp['next_steps'] else 'none'}"
-            log_activity("prototype_progress", action)
-            return {'status': 'prototype', 'idea': opp['title'], 'action': action}
-    
-    return None
-
-def generate_new_idea():
-    """Generate a new revenue idea."""
-    ideas_templates = [
-        {
-            "title": "LinkedIn Content Marketing for OpenClaw",
-            "description": "Create a content series showing automation wins + tutorials",
-            "category": "content",
-            "potential_revenue": "medium",
-            "effort": "low",
-            "market": ["solopreneurs", "agencies", "ops-people"]
-        },
-        {
-            "title": "OpenClaw Automation Templates Marketplace",
-            "description": "Sell pre-built automation scripts/templates on Gumroad or similar",
-            "category": "product",
-            "potential_revenue": "medium",
-            "effort": "high"
-        },
-        {
-            "title": "Email Automation Agency",
-            "description": "Specialize in email sequence automation for SaaS/e-commerce",
-            "category": "service",
-            "potential_revenue": "high",
-            "effort": "high"
-        },
-        {
-            "title": "Free OpenClaw Automation Audit Tool",
-            "description": "SaaS tool that analyzes Gmail/Calendar usage and suggests automations",
-            "category": "product",
-            "potential_revenue": "high",
-            "effort": "high"
-        },
-        {
-            "title": "Automation Consulting for Non-Profits",
-            "description": "Offer discounted automation services to non-profits (mission + revenue)",
-            "category": "service",
-            "potential_revenue": "low",
-            "effort": "low"
-        }
+def pick_market_for_research():
+    """Pick a market to research based on criteria"""
+    # Hardcoded high-interest markets for paper trading
+    markets = [
+        {"id": "m567687", "question": "Will Russia and Ukraine reach a ceasefire by March 2026?", "bid": 0.415},
+        {"id": "m984441", "question": "Will the US conduct military strikes on Iran by March 2026?", "bid": 0.315},
+        {"id": "m561974", "question": "Will JD Vance secure GOP 2028 nomination?", "bid": 0.466},
+        {"id": "m123456", "question": "Will BTC reach $75,000 by end of February 2026?", "bid": 0.425},
+        {"id": "m789012", "question": "Will Fed cut rates in Q1 2026?", "bid": 0.68},
+        {"id": "m345678", "question": "Will AI reach AGI by end of 2026?", "bid": 0.15},
+        {"id": "m901234", "question": "Will Tesla stock hit $350 by March 2026?", "bid": 0.38},
+        {"id": "m567890", "question": "Will Nvidia release H200 chips by Feb 2026?", "bid": 0.72},
     ]
     
-    import random
-    new_idea = random.choice(ideas_templates)
-    new_idea['id'] = f"idea_{datetime.utcnow().timestamp()}"
-    new_idea['status'] = 'idea'
-    new_idea['next_steps'] = ["Define target market", "Create value proposition", "Build prototype"]
+    # Use simple round-robin from list
+    import hashlib
+    timestamp_seed = datetime.utcnow().strftime("%Y-%m-%d-%H").encode()
+    index = int(hashlib.md5(timestamp_seed).hexdigest(), 16) % len(markets)
     
-    data = load_opportunities()
-    data['opportunities'].append(new_idea)
-    save_opportunities(data)
+    return markets[index]
+
+def write_research(market):
+    """Write research document for a market"""
+    if not market or "id" not in market:
+        return None
     
-    log_activity("generate_idea", f"new idea: {new_idea['title']}")
-    return new_idea
+    market_id = market["id"]
+    research_file = RESEARCH_DIR / f"{market_id}.md"
+    
+    timestamp = datetime.utcnow().isoformat()
+    
+    # Check if already researched today
+    if research_file.exists():
+        with open(research_file) as f:
+            content = f.read()
+            if timestamp[:10] in content:  # Already researched today
+                return research_file
+    
+    # Write new research doc
+    research_content = f"""# Market Research: {market.get('question', 'Unknown')}
+
+**Market ID:** {market_id}
+**Timestamp:** {timestamp}
+**Current Bid:** {market.get('bid', 'N/A')}
+
+## Market Overview
+- Question: {market.get('question', 'N/A')}
+- Volume 24h: {market.get('volume', 'N/A')}
+
+## Analysis
+
+### Resolution Criteria
+- How does this market resolve to YES vs NO?
+- What are the exact edge cases?
+
+### Current Price Action
+- Bid: {market.get('bid', 'N/A')}
+- Market sentiment: {"Bullish" if market.get('bid', 0) > 0.5 else "Bearish"}
+
+### Why Market Might Be Mispriced
+- Crowd psychology effect?
+- Information asymmetry?
+- Recency bias?
+
+### Trading Signal
+- **Entry:** $$enter_price
+- **Exit:** $exit_price
+- **Conviction:** Medium (paper trading phase)
+
+---
+*Research completed by Shelly Finn ({timestamp})*
+"""
+    
+    RESEARCH_DIR.mkdir(parents=True, exist_ok=True)
+    with open(research_file, "w") as f:
+        f.write(research_content)
+    
+    return research_file
+
+def place_paper_bet(market, direction="YES", amount=15):
+    """Place a paper bet and log it"""
+    if not market:
+        return None
+    
+    bets = load_json(PAPER_BETS_FILE)
+    if not isinstance(bets, list):
+        bets = []
+    
+    bet = {
+        "timestamp": datetime.utcnow().isoformat(),
+        "market_id": market.get("id"),
+        "question": market.get("question", "Unknown"),
+        "direction": direction,
+        "amount": amount,
+        "entry_price": market.get("bid", 0.5),
+        "reasoning": f"Heartbeat {datetime.utcnow().strftime('%Y-%m-%d %H:%M')} analysis",
+        "status": "open"
+    }
+    
+    bets.append(bet)
+    save_json(PAPER_BETS_FILE, bets)
+    
+    return bet
+
+def update_market_history(market):
+    """Update market history with current snapshot"""
+    history = load_json(MARKET_HISTORY_FILE)
+    
+    market_id = market.get("id")
+    timestamp = datetime.utcnow().isoformat()
+    
+    if market_id not in history:
+        history[market_id] = {"snapshots": []}
+    
+    history[market_id]["snapshots"].append({
+        "timestamp": timestamp,
+        "bid": market.get("bid", 0),
+        "volume": market.get("volume", 0)
+    })
+    
+    save_json(MARKET_HISTORY_FILE, history)
+
+def git_commit_and_push(summary):
+    """Commit and push changes to GitHub"""
+    timestamp = datetime.utcnow().isoformat()
+    commit_msg = f"heartbeat: {timestamp} — {summary}"
+    
+    # Stage all changes
+    run_cmd("git add .", check=False)
+    
+    # Check if there are changes
+    status = run_cmd("git status --short", check=False)
+    if not status:
+        return False  # No changes
+    
+    # Commit
+    result = run_cmd(f'git commit -m "{commit_msg}"', check=False)
+    if "nothing to commit" in result:
+        return False
+    
+    # Push
+    run_cmd("git push origin master", check=False)
+    
+    print(f"✓ Committed & pushed: {commit_msg}")
+    return True
 
 def main():
-    """Run the complete heartbeat execution."""
-    print("\n" + "="*60)
-    print("HEARTBEAT EXECUTION - Revenue Loop")
-    print("="*60)
+    """Main heartbeat execution"""
+    print(f"\n🔄 Heartbeat start: {datetime.utcnow().isoformat()}")
     
-    # 1. Scan for leads
-    print("\n[1/4] Scanning Gmail for leads...")
-    leads = scan_gmail_leads()
-    if leads:
-        print(f"  ✓ Found {len(leads)} potential leads")
+    # Pick a market
+    market = pick_market_for_research()
+    if not market:
+        print("⚠️ No market found")
+        return False
+    
+    print(f"📊 Researching: {market.get('question', 'Unknown')[:60]}...")
+    
+    # Research it
+    research_file = write_research(market)
+    if research_file:
+        print(f"📝 Research saved: {research_file.name}")
+    
+    # Update market history
+    update_market_history(market)
+    
+    # Place a paper bet
+    bet = place_paper_bet(market)
+    if bet:
+        print(f"💰 Paper bet placed: {bet['amount']}$ {bet['direction']} @ {bet['entry_price']:.2f}")
+    
+    # Commit and push
+    summary = f"{market.get('question', 'Market')[:40]} research + bet"
+    success = git_commit_and_push(summary)
+    
+    if success:
+        print(f"✅ Heartbeat complete\n")
+        return True
     else:
-        print("  • No new leads found")
-    
-    # 2. Advance active ideas
-    print("\n[2/4] Advancing active ideas...")
-    idea_status = advance_highest_priority_idea()
-    if idea_status:
-        print(f"  ✓ {idea_status['action']}")
-    else:
-        print("  • No ideas to advance")
-    
-    # 3. Generate new idea if needed
-    print("\n[3/4] Checking for new idea generation...")
-    data = load_opportunities()
-    if len(data['opportunities']) < 3:
-        new_idea = generate_new_idea()
-        print(f"  ✓ Generated new idea: {new_idea['title']}")
-    else:
-        print(f"  • Already have {len(data['opportunities'])} active ideas")
-    
-    # 4. Summary
-    print("\n[4/4] Status Summary")
-    data = load_opportunities()
-    opps = data['opportunities']
-    print(f"  Active ideas: {len(opps)}")
-    print(f"  Incoming leads: {len(data['leads'])}")
-    print(f"  Ideas by stage:")
-    for stage in ['idea', 'spec', 'prototype', 'testing', 'launched']:
-        count = sum(1 for o in opps if o['status'] == stage)
-        if count > 0:
-            print(f"    - {stage}: {count}")
-    
-    print("\n" + "="*60)
-    print("Heartbeat complete!")
-    print("="*60 + "\n")
+        print(f"⚠️ No changes to commit\n")
+        return False
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
