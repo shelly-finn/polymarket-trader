@@ -6,7 +6,10 @@
     "direction": "YES",
     "amount": 15,
     "entry_price": 0.425,
-    "reasoning": "Heartbeat 2026-02-15 06:08 analysis",
+    "conviction": "medium",
+    "reasoning": "Volatility regime underpriced. BTC needs 7-10% move in 13 days. Historical base rates: 10% moves happen 2-3x per month in crypto. Bull cycle positioning (post-2024 recovery) creates asymmetric upside. Feb month-end rebalancing + Fed commentary windows = catalyst risk. True probability ~48-52% vs market 42.5%.",
+    "exit_profit_target": 0.60,
+    "exit_stop_loss": 0.25,
     "status": "open"
   },
   {
