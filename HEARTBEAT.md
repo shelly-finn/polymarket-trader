@@ -1,15 +1,21 @@
 # Heartbeat - Revenue & Opportunity Loop
 
-**Goal:** Every 30 minutes, advance revenue ideas from concept → prototype → implementation.
+**Goal:** Every 30 minutes, advance revenue ideas and monitor market intelligence.
 
 ## Each Heartbeat Does
 
-1. **Scan for Leads** (2 min)
+1. **SEC Filing Monitor** (2 min)
+   - Run: `python3 scripts/sec_monitor.py --check`
+   - Monitors watchlist: AAPL, MSFT, GOOG, AMZN, NVDA, META, TSLA
+   - Auto-extracts risk factors from new 10-K/10-Q filings
+   - Logs insights to `projects/ai-investment-agent/insights.json`
+
+2. **Scan for Leads** (2 min)
    - Gmail: search for recent business/partnership inquiries
    - Keywords: interested, opportunity, collaboration, budget, rate, availability
    - If found: extract details and add to opportunities.json
 
-2. **Advance Active Ideas** (10 min)
+3. **Advance Active Ideas** (10 min)
    - Pick the highest-priority idea (status: idea → prototype → launched)
    - Execute ONE concrete step toward implementation:
      - **Idea stage**: Write service description, pitch, technical spec
@@ -17,11 +23,11 @@
      - **Implementation**: Deploy, publish, or activate the working version
    - Create actual deliverables (code, docs, assets) in projects/
 
-3. **Generate New Ideas** (3 min)
+4. **Generate New Ideas** (3 min)
    - If no leads and all ideas have tasks: generate 1 new revenue idea
    - Ideas must have: description, target market, implementation plan, effort estimate
 
-4. **Report Back** (5 min)
+5. **Report Back** (3 min)
    - What was completed in this heartbeat?
    - Links to created code/docs/prototypes
    - Next concrete step

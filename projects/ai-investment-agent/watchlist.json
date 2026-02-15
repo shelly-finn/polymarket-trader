@@ -1,0 +1,44 @@
+{
+  "description": "Companies to monitor for SEC filing changes",
+  "updated": "2026-02-15",
+  "companies": [
+    {
+      "ticker": "AAPL",
+      "name": "Apple Inc.",
+      "sector": "Technology"
+    },
+    {
+      "ticker": "MSFT",
+      "name": "Microsoft Corp",
+      "sector": "Technology"
+    },
+    {
+      "ticker": "GOOG",
+      "name": "Alphabet Inc.",
+      "sector": "Technology"
+    },
+    {
+      "ticker": "AMZN",
+      "name": "Amazon.com Inc.",
+      "sector": "Consumer/Tech"
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corp",
+      "sector": "Semiconductors"
+    },
+    {
+      "ticker": "META",
+      "name": "Meta Platforms",
+      "sector": "Technology"
+    },
+    {
+      "ticker": "TSLA",
+      "name": "Tesla Inc.",
+      "sector": "Automotive/Energy"
+    }
+  ],
+  "check_frequency": "daily",
+  "last_checked": "2026-02-15T02:52:56.464189",
+  "filings_tracked": []
+}

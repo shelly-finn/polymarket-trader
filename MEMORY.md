@@ -73,4 +73,16 @@
 - Created SEC EDGAR fetcher and risk comparator tools
 - Identified gap opportunities: cross-company comparison, anomaly detection, small-cap scanner
 - Revenue potential: $99-299/mo subscriptions, $2k+ custom analysis
-- Next: Improve risk factor extraction (current regex not matching complex XBRL/HTML format)
+
+## SEC EDGAR Parser Fix (Feb 15, 2026 - 02:45 UTC)
+- **Issue:** Risk factor extraction regex was failing on XBRL inline format (only ~10 chars extracted)
+- **Root cause:** Complex nested HTML tags and entities weren't being cleaned before pattern matching
+- **Solution:** Improved extraction function with:
+  1. Multiple regex patterns (specific to general fallback)
+  2. Proper HTML entity decoding (including numeric &#8217; style)
+  3. Safe character code conversion with bounds checking (<1114112 codepoints)
+  4. Better tag stripping (comments, styles, all tags)
+  5. Increased char limit to 150K for verbose XBRL filings
+- **Status:** ✅ FIXED - Tested on Apple 10-K (Sept 2025): Successfully extracted 68,022 chars of risk factors
+- **Files:** sec_edgar_fetcher.py, risk_comparator.py, data/AAPL_2025-10-31_risks.txt
+- **Committed:** 8c8d53b
