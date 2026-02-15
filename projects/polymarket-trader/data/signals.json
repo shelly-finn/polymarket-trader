@@ -1,0 +1,647 @@
+{
+  "generated_at": "2026-02-15T03:03:00.384624+00:00",
+  "total_markets": 1933,
+  "extreme_prices": [
+    {
+      "market_id": "1277192",
+      "question": "Will xAI have the best AI model at the end of February 2026?",
+      "signal": "EXTREME_LOW_YES",
+      "current_price": 0.01,
+      "potential_return": 99.0,
+      "liquidity": 52369.08987,
+      "volume_24h": 898522.228821,
+      "reasoning": "YES priced at 1.0%. If actually >50% likely, massive upside."
+    },
+    {
+      "market_id": "897784",
+      "question": "Will Slovakia win the Men's Ice Hockey gold medal at the 2026 Winter Olympics?",
+      "signal": "EXTREME_LOW_YES",
+      "current_price": 0.01,
+      "potential_return": 99.0,
+      "liquidity": 48189.1602,
+      "volume_24h": 641088.986846,
+      "reasoning": "YES priced at 1.0%. If actually >50% likely, massive upside."
+    },
+    {
+      "market_id": "1273930",
+      "question": "Will the US next strike Iran on February 21, 2026 (ET)?",
+      "signal": "EXTREME_LOW_YES",
+      "current_price": 0.01,
+      "potential_return": 99.0,
+      "liquidity": 40088.68047,
+      "volume_24h": 554867.191587,
+      "reasoning": "YES priced at 1.0%. If actually >50% likely, massive upside."
+    },
+    {
+      "market_id": "1273931",
+      "question": "Will the US next strike Iran on February 22, 2026 (ET)?",
+      "signal": "EXTREME_LOW_YES",
+      "current_price": 0.01,
+      "potential_return": 99.0,
+      "liquidity": 29930.51889,
+      "volume_24h": 490727.944064,
+      "reasoning": "YES priced at 1.0%. If actually >50% likely, massive upside."
+    },
+    {
+      "market_id": "842017",
+      "question": "Will Georgia win Eurovision 2026?",
+      "signal": "EXTREME_LOW_YES",
+      "current_price": 0.01,
+      "potential_return": 99.0,
+      "liquidity": 22352.72691,
+      "volume_24h": 51826.191191,
+      "reasoning": "YES priced at 1.0%. If actually >50% likely, massive upside."
+    },
+    {
+      "market_id": "842029",
+      "question": "Will Poland win Eurovision 2026?",
+      "signal": "EXTREME_LOW_YES",
+      "current_price": 0.01,
+      "potential_return": 99.0,
+      "liquidity": 25818.54493,
+      "volume_24h": 47760.653093,
+      "reasoning": "YES priced at 1.0%. If actually >50% likely, massive upside."
+    },
+    {
+      "market_id": "559687",
+      "question": "Will Oprah Winfrey win the 2028 Democratic presidential nomination?",
+      "signal": "EXTREME_LOW_YES",
+      "current_price": 0.0105,
+      "potential_return": 94.23809523809523,
+      "liquidity": 699763.93335,
+      "volume_24h": 33406262.627235,
+      "reasoning": "YES priced at 1.1%. If actually >50% likely, massive upside."
+    },
+    {
+      "market_id": "559671",
+      "question": "Will Zohran Mamdani win the 2028 Democratic presidential nomination?",
+      "signal": "EXTREME_LOW_YES",
+      "current_price": 0.0105,
+      "potential_return": 94.23809523809523,
+      "liquidity": 317747.03235,
+      "volume_24h": 29390194.283964,
+      "reasoning": "YES priced at 1.1%. If actually >50% likely, massive upside."
+    },
+    {
+      "market_id": "559680",
+      "question": "Will Phil Murphy win the 2028 Democratic presidential nomination?",
+      "signal": "EXTREME_LOW_YES",
+      "current_price": 0.0105,
+      "potential_return": 94.23809523809523,
+      "liquidity": 1370011.69155,
+      "volume_24h": 27329216.835122,
+      "reasoning": "YES priced at 1.1%. If actually >50% likely, massive upside."
+    },
+    {
+      "market_id": "559662",
+      "question": "Will Mark Cuban win the 2028 Democratic presidential nomination?",
+      "signal": "EXTREME_LOW_YES",
+      "current_price": 0.0105,
+      "potential_return": 94.23809523809523,
+      "liquidity": 1129290.77298,
+      "volume_24h": 12350218.910993,
+      "reasoning": "YES priced at 1.1%. If actually >50% likely, massive upside."
+    },
+    {
+      "market_id": "561991",
+      "question": "Will Matt Gaetz win the 2028 Republican presidential nomination?",
+      "signal": "EXTREME_LOW_YES",
+      "current_price": 0.0105,
+      "potential_return": 94.23809523809523,
+      "liquidity": 601627.75856,
+      "volume_24h": 11854318.108016,
+      "reasoning": "YES priced at 1.1%. If actually >50% likely, massive upside."
+    },
+    {
+      "market_id": "561985",
+      "question": "Will Brian Kemp win the 2028 Republican presidential nomination?",
+      "signal": "EXTREME_LOW_YES",
+      "current_price": 0.0105,
+      "potential_return": 94.23809523809523,
+      "liquidity": 360813.57206,
+      "volume_24h": 5987939.939819,
+      "reasoning": "YES priced at 1.1%. If actually >50% likely, massive upside."
+    },
+    {
+      "market_id": "561244",
+      "question": "Will Donald Trump Jr. win the 2028 US Presidential Election?",
+      "signal": "EXTREME_LOW_YES",
+      "current_price": 0.0105,
+      "potential_return": 94.23809523809523,
+      "liquidity": 459083.43807,
+      "volume_24h": 5320109.166402,
+      "reasoning": "YES priced at 1.1%. If actually >50% likely, massive upside."
+    },
+    {
+      "market_id": "553867",
+      "question": "Will the Golden State Warriors win the 2026 NBA Finals?",
+      "signal": "EXTREME_LOW_YES",
+      "current_price": 0.0105,
+      "potential_return": 94.23809523809523,
+      "liquidity": 244316.107,
+      "volume_24h": 3243447.143129,
+      "reasoning": "YES priced at 1.1%. If actually >50% likely, massive upside."
+    },
+    {
+      "market_id": "897781",
+      "question": "Will Switzerland win the Men's Ice Hockey gold medal at the 2026 Winter Olympics?",
+      "signal": "EXTREME_LOW_YES",
+      "current_price": 0.0105,
+      "potential_return": 94.23809523809523,
+      "liquidity": 57174.97528,
+      "volume_24h": 688766.93831,
+      "reasoning": "YES priced at 1.1%. If actually >50% likely, massive upside."
+    },
+    {
+      "market_id": "561260",
+      "question": "Will Thomas Massie win the 2028 US Presidential Election?",
+      "signal": "EXTREME_LOW_YES",
+      "current_price": 0.0105,
+      "potential_return": 94.23809523809523,
+      "liquidity": 416753.84592,
+      "volume_24h": 656671.332109,
+      "reasoning": "YES priced at 1.1%. If actually >50% likely, massive upside."
+    },
+    {
+      "market_id": "1273922",
+      "question": "Will the US next strike Iran on February 17, 2026 (ET)?",
+      "signal": "EXTREME_LOW_YES",
+      "current_price": 0.0105,
+      "potential_return": 94.23809523809523,
+      "liquidity": 28781.62798,
+      "volume_24h": 616788.061915,
+      "reasoning": "YES priced at 1.1%. If actually >50% likely, massive upside."
+    },
+    {
+      "market_id": "553844",
+      "question": "Will the Columbus Blue Jackets win the 2026 NHL Stanley Cup?",
+      "signal": "EXTREME_LOW_YES",
+      "current_price": 0.0105,
+      "potential_return": 94.23809523809523,
+      "liquidity": 80818.28352,
+      "volume_24h": 366389.227323,
+      "reasoning": "YES priced at 1.1%. If actually >50% likely, massive upside."
+    },
+    {
+      "market_id": "569365",
+      "question": "Will Germ\u00e1n Vargas Lleras win the 2026 Colombian presidential election?",
+      "signal": "EXTREME_LOW_YES",
+      "current_price": 0.0105,
+      "potential_return": 94.23809523809523,
+      "liquidity": 15614.71371,
+      "volume_24h": 230983.568942,
+      "reasoning": "YES priced at 1.1%. If actually >50% likely, massive upside."
+    },
+    {
+      "market_id": "1350031",
+      "question": "Will Elon Musk post 400-419 tweets from February 10 to February 17, 2026?",
+      "signal": "EXTREME_LOW_YES",
+      "current_price": 0.0105,
+      "potential_return": 94.23809523809523,
+      "liquidity": 24893.08374,
+      "volume_24h": 179592.948729,
+      "reasoning": "YES priced at 1.1%. If actually >50% likely, massive upside."
+    }
+  ],
+  "high_volume": [
+    {
+      "market_id": "572473",
+      "question": "Will Trump nominate Judy Shelton as the next Fed chair?",
+      "signal": "HIGH_VOLUME",
+      "volume_24h": 82232132.476804,
+      "liquidity": 2573326.08646,
+      "vol_to_liq_ratio": 31.95558188660294,
+      "yes_price": 0.0295,
+      "reasoning": "$82,232,132 volume (ratio: 32.0x). Smart money moving?"
+    },
+    {
+      "market_id": "654412",
+      "question": "Will the Fed decrease interest rates by 50+ bps after the March 2026 meeting?",
+      "signal": "HIGH_VOLUME",
+      "volume_24h": 42630960.346954,
+      "liquidity": 798654.40827,
+      "vol_to_liq_ratio": 53.378482489439676,
+      "yes_price": 0.0085,
+      "reasoning": "$42,630,960 volume (ratio: 53.4x). Smart money moving?"
+    },
+    {
+      "market_id": "1092199",
+      "question": "US strikes Iran by January 31, 2026?",
+      "signal": "HIGH_VOLUME",
+      "volume_24h": 41754060.055673,
+      "liquidity": 0.0,
+      "vol_to_liq_ratio": 0,
+      "yes_price": 0.0,
+      "reasoning": "$41,754,060 volume (ratio: 0.0x). Smart money moving?"
+    },
+    {
+      "market_id": "572469",
+      "question": "Will Trump nominate Kevin Warsh as the next Fed chair?",
+      "signal": "HIGH_VOLUME",
+      "volume_24h": 39020672.219407,
+      "liquidity": 665592.65677,
+      "vol_to_liq_ratio": 58.625454807099615,
+      "yes_price": 0.9595,
+      "reasoning": "$39,020,672 volume (ratio: 58.6x). Smart money moving?"
+    },
+    {
+      "market_id": "654415",
+      "question": "Will the Fed increase interest rates by 25+ bps after the March 2026 meeting?",
+      "signal": "HIGH_VOLUME",
+      "volume_24h": 37033367.067989,
+      "liquidity": 1476341.30357,
+      "vol_to_liq_ratio": 25.084556652609482,
+      "yes_price": 0.0065,
+      "reasoning": "$37,033,367 volume (ratio: 25.1x). Smart money moving?"
+    },
+    {
+      "market_id": "566203",
+      "question": "Will Leeds win the 2025\u201326 English Premier League?",
+      "signal": "HIGH_VOLUME",
+      "volume_24h": 36935358.828948,
+      "liquidity": 1181946.46652,
+      "vol_to_liq_ratio": 31.249603831632594,
+      "yes_price": 0.0015,
+      "reasoning": "$36,935,359 volume (ratio: 31.2x). Smart money moving?"
+    },
+    {
+      "market_id": "559684",
+      "question": "Will Chelsea Clinton win the 2028 Democratic presidential nomination?",
+      "signal": "HIGH_VOLUME",
+      "volume_24h": 36631850.127403,
+      "liquidity": 841743.56718,
+      "vol_to_liq_ratio": 43.519014050949764,
+      "yes_price": 0.0085,
+      "reasoning": "$36,631,850 volume (ratio: 43.5x). Smart money moving?"
+    },
+    {
+      "market_id": "559687",
+      "question": "Will Oprah Winfrey win the 2028 Democratic presidential nomination?",
+      "signal": "HIGH_VOLUME",
+      "volume_24h": 33406262.627235,
+      "liquidity": 699763.93335,
+      "vol_to_liq_ratio": 47.739331844824065,
+      "yes_price": 0.0105,
+      "reasoning": "$33,406,263 volume (ratio: 47.7x). Smart money moving?"
+    },
+    {
+      "market_id": "553861",
+      "question": "Will the Indiana Pacers win the 2026 NBA Finals?",
+      "signal": "HIGH_VOLUME",
+      "volume_24h": 31737587.18117,
+      "liquidity": 455349.46296,
+      "vol_to_liq_ratio": 69.6994061986145,
+      "yes_price": 0.0015,
+      "reasoning": "$31,737,587 volume (ratio: 69.7x). Smart money moving?"
+    },
+    {
+      "market_id": "559688",
+      "question": "Will Andrew Yang win the 2028 Democratic presidential nomination?",
+      "signal": "HIGH_VOLUME",
+      "volume_24h": 31501506.634573,
+      "liquidity": 1122430.2431,
+      "vol_to_liq_ratio": 28.06544712085636,
+      "yes_price": 0.0095,
+      "reasoning": "$31,501,507 volume (ratio: 28.1x). Smart money moving?"
+    },
+    {
+      "market_id": "553874",
+      "question": "Will the Memphis Grizzlies win the 2026 NBA Finals?",
+      "signal": "HIGH_VOLUME",
+      "volume_24h": 30733193.021182,
+      "liquidity": 943984.06184,
+      "vol_to_liq_ratio": 32.556898218469186,
+      "yes_price": 0.0015,
+      "reasoning": "$30,733,193 volume (ratio: 32.6x). Smart money moving?"
+    },
+    {
+      "market_id": "559683",
+      "question": "Will George Clooney win the 2028 Democratic presidential nomination?",
+      "signal": "HIGH_VOLUME",
+      "volume_24h": 29688187.129316,
+      "liquidity": 1247844.34479,
+      "vol_to_liq_ratio": 23.79157885618517,
+      "yes_price": 0.0085,
+      "reasoning": "$29,688,187 volume (ratio: 23.8x). Smart money moving?"
+    },
+    {
+      "market_id": "559685",
+      "question": "Will MrBeast win the 2028 Democratic presidential nomination?",
+      "signal": "HIGH_VOLUME",
+      "volume_24h": 29625416.518772,
+      "liquidity": 1312031.76837,
+      "vol_to_liq_ratio": 22.57980121592412,
+      "yes_price": 0.0095,
+      "reasoning": "$29,625,417 volume (ratio: 22.6x). Smart money moving?"
+    },
+    {
+      "market_id": "559671",
+      "question": "Will Zohran Mamdani win the 2028 Democratic presidential nomination?",
+      "signal": "HIGH_VOLUME",
+      "volume_24h": 29390194.283964,
+      "liquidity": 317747.03235,
+      "vol_to_liq_ratio": 92.49557444045787,
+      "yes_price": 0.0105,
+      "reasoning": "$29,390,194 volume (ratio: 92.5x). Smart money moving?"
+    },
+    {
+      "market_id": "561251",
+      "question": "Will LeBron James win the 2028 US Presidential Election?",
+      "signal": "HIGH_VOLUME",
+      "volume_24h": 28759349.323201,
+      "liquidity": 1184101.62512,
+      "vol_to_liq_ratio": 24.28790630220312,
+      "yes_price": 0.0075,
+      "reasoning": "$28,759,349 volume (ratio: 24.3x). Smart money moving?"
+    }
+  ],
+  "resolving_soon": [
+    {
+      "market_id": "1214285",
+      "question": "Will CD Guadalajara win on 2026-02-14?",
+      "signal": "RESOLVING_SOON",
+      "hours_left": 0.06655922944444444,
+      "end_date": "2026-02-15T03:07:00Z",
+      "yes_price": 0.445,
+      "liquidity": 52473.1498,
+      "reasoning": "Resolves in 0.1h. Last chance for edge."
+    },
+    {
+      "market_id": "1214287",
+      "question": "Will CF Am\u00e9rica win on 2026-02-14?",
+      "signal": "RESOLVING_SOON",
+      "hours_left": 0.06655922944444444,
+      "end_date": "2026-02-15T03:07:00Z",
+      "yes_price": 0.295,
+      "liquidity": 51601.0688,
+      "reasoning": "Resolves in 0.1h. Last chance for edge."
+    },
+    {
+      "market_id": "1214286",
+      "question": "Will CD Guadalajara vs. CF Am\u00e9rica end in a draw?",
+      "signal": "RESOLVING_SOON",
+      "hours_left": 0.06655922944444444,
+      "end_date": "2026-02-15T03:07:00Z",
+      "yes_price": 0.265,
+      "liquidity": 52427.099,
+      "reasoning": "Resolves in 0.1h. Last chance for edge."
+    },
+    {
+      "market_id": "1376126",
+      "question": "Valorant: MIBR vs G2 Esports (BO5) - VCT Americas Kickoff Playoffs",
+      "signal": "RESOLVING_SOON",
+      "hours_left": 1.449892562777778,
+      "end_date": "2026-02-15T04:30:00Z",
+      "yes_price": 0.0005,
+      "liquidity": 355691.54767,
+      "reasoning": "Resolves in 1.4h. Last chance for edge."
+    },
+    {
+      "market_id": "1376129",
+      "question": "Valorant: MIBR vs G2 Esports - Map 1 Winner",
+      "signal": "RESOLVING_SOON",
+      "hours_left": 1.449892562777778,
+      "end_date": "2026-02-15T04:30:00Z",
+      "yes_price": 0.0,
+      "liquidity": 0.0,
+      "reasoning": "Resolves in 1.4h. Last chance for edge."
+    },
+    {
+      "market_id": "1376130",
+      "question": "Valorant: MIBR vs G2 Esports - Map 2 Winner",
+      "signal": "RESOLVING_SOON",
+      "hours_left": 1.449892562777778,
+      "end_date": "2026-02-15T04:30:00Z",
+      "yes_price": 0.0,
+      "liquidity": 0.0,
+      "reasoning": "Resolves in 1.4h. Last chance for edge."
+    },
+    {
+      "market_id": "1376132",
+      "question": "Valorant: MIBR vs G2 Esports - Map 3 Winner",
+      "signal": "RESOLVING_SOON",
+      "hours_left": 1.449892562777778,
+      "end_date": "2026-02-15T04:30:00Z",
+      "yes_price": 0.0005,
+      "liquidity": 273573.44466,
+      "reasoning": "Resolves in 1.4h. Last chance for edge."
+    },
+    {
+      "market_id": "1378682",
+      "question": "Map Handicap: MIBR (-1.5) vs G2 Esports (+1.5)",
+      "signal": "RESOLVING_SOON",
+      "hours_left": 1.449892562777778,
+      "end_date": "2026-02-15T04:30:00Z",
+      "yes_price": 0.0005,
+      "liquidity": 276203.98909,
+      "reasoning": "Resolves in 1.4h. Last chance for edge."
+    },
+    {
+      "market_id": "1376134",
+      "question": "Games Total: O/U 3.5",
+      "signal": "RESOLVING_SOON",
+      "hours_left": 1.449892562777778,
+      "end_date": "2026-02-15T04:30:00Z",
+      "yes_price": 0.0005,
+      "liquidity": 256475.93511,
+      "reasoning": "Resolves in 1.4h. Last chance for edge."
+    },
+    {
+      "market_id": "1378681",
+      "question": "Map Handicap: MIBR (-2.5) vs G2 Esports (+2.5)",
+      "signal": "RESOLVING_SOON",
+      "hours_left": 1.449892562777778,
+      "end_date": "2026-02-15T04:30:00Z",
+      "yes_price": 0.0005,
+      "liquidity": 252804.55792,
+      "reasoning": "Resolves in 1.4h. Last chance for edge."
+    }
+  ],
+  "political": [
+    {
+      "market_id": "572473",
+      "question": "Will Trump nominate Judy Shelton as the next Fed chair?",
+      "signal": "POLITICAL",
+      "yes_price": 0.0295,
+      "volume_24h": 82232132.476804,
+      "liquidity": 2573326.08646,
+      "keywords": [
+        "trump",
+        "fed"
+      ]
+    },
+    {
+      "market_id": "654412",
+      "question": "Will the Fed decrease interest rates by 50+ bps after the March 2026 meeting?",
+      "signal": "POLITICAL",
+      "yes_price": 0.0085,
+      "volume_24h": 42630960.346954,
+      "liquidity": 798654.40827,
+      "keywords": [
+        "fed"
+      ]
+    },
+    {
+      "market_id": "1092199",
+      "question": "US strikes Iran by January 31, 2026?",
+      "signal": "POLITICAL",
+      "yes_price": 0.0,
+      "volume_24h": 41754060.055673,
+      "liquidity": 0.0,
+      "keywords": [
+        "iran"
+      ]
+    },
+    {
+      "market_id": "572469",
+      "question": "Will Trump nominate Kevin Warsh as the next Fed chair?",
+      "signal": "POLITICAL",
+      "yes_price": 0.9595,
+      "volume_24h": 39020672.219407,
+      "liquidity": 665592.65677,
+      "keywords": [
+        "trump",
+        "fed"
+      ]
+    },
+    {
+      "market_id": "654415",
+      "question": "Will the Fed increase interest rates by 25+ bps after the March 2026 meeting?",
+      "signal": "POLITICAL",
+      "yes_price": 0.0065,
+      "volume_24h": 37033367.067989,
+      "liquidity": 1476341.30357,
+      "keywords": [
+        "fed"
+      ]
+    },
+    {
+      "market_id": "559684",
+      "question": "Will Chelsea Clinton win the 2028 Democratic presidential nomination?",
+      "signal": "POLITICAL",
+      "yes_price": 0.0085,
+      "volume_24h": 36631850.127403,
+      "liquidity": 841743.56718,
+      "keywords": [
+        "president",
+        "democrat",
+        "nomination"
+      ]
+    },
+    {
+      "market_id": "559687",
+      "question": "Will Oprah Winfrey win the 2028 Democratic presidential nomination?",
+      "signal": "POLITICAL",
+      "yes_price": 0.0105,
+      "volume_24h": 33406262.627235,
+      "liquidity": 699763.93335,
+      "keywords": [
+        "president",
+        "democrat",
+        "nomination"
+      ]
+    },
+    {
+      "market_id": "559688",
+      "question": "Will Andrew Yang win the 2028 Democratic presidential nomination?",
+      "signal": "POLITICAL",
+      "yes_price": 0.0095,
+      "volume_24h": 31501506.634573,
+      "liquidity": 1122430.2431,
+      "keywords": [
+        "president",
+        "democrat",
+        "nomination"
+      ]
+    },
+    {
+      "market_id": "559683",
+      "question": "Will George Clooney win the 2028 Democratic presidential nomination?",
+      "signal": "POLITICAL",
+      "yes_price": 0.0085,
+      "volume_24h": 29688187.129316,
+      "liquidity": 1247844.34479,
+      "keywords": [
+        "president",
+        "democrat",
+        "nomination"
+      ]
+    },
+    {
+      "market_id": "559685",
+      "question": "Will MrBeast win the 2028 Democratic presidential nomination?",
+      "signal": "POLITICAL",
+      "yes_price": 0.0095,
+      "volume_24h": 29625416.518772,
+      "liquidity": 1312031.76837,
+      "keywords": [
+        "president",
+        "democrat",
+        "nomination"
+      ]
+    },
+    {
+      "market_id": "559671",
+      "question": "Will Zohran Mamdani win the 2028 Democratic presidential nomination?",
+      "signal": "POLITICAL",
+      "yes_price": 0.0105,
+      "volume_24h": 29390194.283964,
+      "liquidity": 317747.03235,
+      "keywords": [
+        "president",
+        "democrat",
+        "nomination"
+      ]
+    },
+    {
+      "market_id": "561251",
+      "question": "Will LeBron James win the 2028 US Presidential Election?",
+      "signal": "POLITICAL",
+      "yes_price": 0.0075,
+      "volume_24h": 28759349.323201,
+      "liquidity": 1184101.62512,
+      "keywords": [
+        "election",
+        "president"
+      ]
+    },
+    {
+      "market_id": "559677",
+      "question": "Will Hillary Clinton win the 2028 Democratic presidential nomination?",
+      "signal": "POLITICAL",
+      "yes_price": 0.0085,
+      "volume_24h": 28714846.865166,
+      "liquidity": 1383055.64755,
+      "keywords": [
+        "president",
+        "democrat",
+        "nomination"
+      ]
+    },
+    {
+      "market_id": "559679",
+      "question": "Will Bernie Sanders win the 2028 Democratic presidential nomination?",
+      "signal": "POLITICAL",
+      "yes_price": 0.0085,
+      "volume_24h": 28711569.889187,
+      "liquidity": 1416361.97399,
+      "keywords": [
+        "president",
+        "democrat",
+        "nomination"
+      ]
+    },
+    {
+      "market_id": "561247",
+      "question": "Will Tim Walz win the 2028 US Presidential Election?",
+      "signal": "POLITICAL",
+      "yes_price": 0.0085,
+      "volume_24h": 28436687.293054,
+      "liquidity": 1214514.83471,
+      "keywords": [
+        "election",
+        "president"
+      ]
+    }
+  ]
+}

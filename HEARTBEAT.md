@@ -45,6 +45,31 @@ Examples of heartbeat work:
 - Generate leads list with contact details
 - Draft sales pitch / value proposition
 - Create pricing model / package tiers
+- **Polymarket**: Scan markets, analyze signals, place paper bets, track outcomes
+
+## Polymarket Paper Trading
+
+**Goal:** Test strategies with simulated bets until consistently profitable.
+
+**Each heartbeat:**
+1. Scan markets: `python3 projects/polymarket-trader/polymarket_trader.py --scan`
+2. Analyze signals: `python3 projects/polymarket-trader/strategies.py`
+3. If high-conviction opportunity: place paper bet with reasoning
+4. Check open bets: `python3 projects/polymarket-trader/polymarket_trader.py --check`
+5. Update resolved bets and track P&L
+
+**Bet criteria:**
+- Only bet when I have specific reasoning (not just "price seems wrong")
+- News correlation: recent event should move price
+- Information edge: I know something market doesn't reflect
+- Start small ($10-50 paper bets) to test strategy
+- Track win rate and ROI over time
+
+**Success threshold for real money:**
+- 20+ paper bets completed
+- Win rate > 55%
+- Positive ROI after fees
+- Consistent strategy that can be explained
 
 NOT just "research" or "plan" — actual executable deliverables.
 

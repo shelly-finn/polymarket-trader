@@ -1,0 +1,12 @@
+{
+  "total_bets": 3,
+  "open_bets": 3,
+  "closed_bets": 0,
+  "wins": 0,
+  "losses": 0,
+  "win_rate": 0,
+  "total_invested": 75.0,
+  "realized_pnl": 0,
+  "roi": 0.0,
+  "calculated_at": "2026-02-15T03:04:47.973511+00:00"
+}
