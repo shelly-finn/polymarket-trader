@@ -1,142 +1,122 @@
-# Heartbeat - Polymarket Intelligence System
+# Heartbeat - Polymarket Paper Trading (Rapid Iteration)
 
-**Goal:** Build a profitable Polymarket trading system through research, analysis, and systematic strategy testing.
+**Goal:** Find a repeatable, profitable trading strategy by testing on short-resolution markets.
 
-**Every heartbeat MUST produce work.** No empty heartbeats. Each run should result in:
-- New research (1 deep dive per heartbeat minimum)
-- New paper bets placed (documented reasoning)
-- Updated market intelligence
-- Commit to GitHub with timestamp and changes
+**Philosophy:** 
+- Fast feedback loops (1-7 days per bet)
+- Rapid iteration (adjust strategy based on results)
+- Data-driven edge discovery (test, measure, improve, repeat)
+- Build systematic approach vs. one-off bets
 
-## Each Heartbeat (My Direct Work)
+**Every heartbeat MUST produce work:** Place 2-3 bets on markets resolving within 7 days, document strategy, commit results.
 
-### 1. Market Scan (5 min)
-- What markets are moving right now?
-- What's happening with watched markets (Ukraine/Russia, BTC, Fed, AI)?
-- Any news that changes probabilities?
-- **OUTPUT:** Market selection for deep dive
+## Each Heartbeat (30 min cycle)
 
-### 2. Deep Research (10 min)
-I analyze ONE market thoroughly:
-- **News & events**: What actually moves this market? Current news?
-- **Resolution mechanics**: How does this resolve YES vs NO? Edge cases?
-- **Base rates**: Similar past events — how often did they happen?
-- **Price analysis**: Why is market at this bid? Is it mispriced?
-- **My edge**: Why do I think I'm right and market is wrong?
-- **Contrarian view**: What would prove me wrong?
+### 1. Short-Resolution Market Scan (3 min)
+- Identify markets resolving in next **1-7 days ONLY**
+- Categories: Crypto prices (daily), sports (same day), economic data (scheduled), event timing
+- Filter for liquid markets (high volume, tight spreads)
+- **OUTPUT:** 2-3 candidate markets
 
-Write analysis to `research/MARKET_ID.md` with:
-- Timestamp, sources, my reasoning
-- Entry logic (why BET on this now)
-- Exit plan (profit/stop loss targets)
-- Conviction level (high/medium/low)
+### 2. Quick Research + Bet (8 min)
+For EACH market:
+- **Edge identified?** Why do I think market is mispriced RIGHT NOW?
+- **Base rate check:** Similar past events — what actually happened?
+- **Price analysis:** Is this a volatility bet, contrarian bet, or information edge?
+- **Entry/exit:** Specific price/outcome targets and stop-loss levels
 
-**OUTPUT:** Research doc with my thesis
+Write ONE-PAGE research to `research/SHORT_MARKET_ID_DATE.md`
 
-### 3. Bet Placement (3 min)
-- Place ONE paper bet based on research
-- Entry: My identified edge
-- Amount: $10-30 (betting pool ~$100)
-- Direction: YES or NO with reasoning
-- Track in `data/paper_bets.json`
+**OUTPUT:** Quick analysis doc (1-3 paragraphs, not long essays)
 
-**OUTPUT:** New bet logged + documented reasoning
+### 3. Bet Placement (5 min)
+- Place 2-3 paper bets per heartbeat on short-resolution markets
+- Size: $5-15 each (smaller, more frequent bets)
+- Track in `data/paper_bets.json` with:
+  - Market ID, question, direction
+  - Entry price, amount, resolution date
+  - Strategy name (e.g., "crypto volatility", "sports contrarian", "data edge")
+  - Reasoning (one line: why mispriced?)
 
-### 4. Commit & Push (2 min)
-- Stage changes: research/, data/
-- Commit: `git commit -m "heartbeat: TIMESTAMP — SUMMARY"`
-  - Example: `heartbeat: 2026-02-15T06:35Z — Russia/Ukraine escalation risk, placed NO bet at 58%`
-- Push: `git push origin master`
+**OUTPUT:** New bets logged with strategy labels
 
-**OUTPUT:** GitHub commit visible to you instantly
+### 4. Weekly Performance Review (Sunday)
+- Resolve all closed bets from past week
+- Calculate win rate, ROI by strategy
+- Document what worked/failed in `data/strategy_performance.json`
+- Update HEARTBEAT.md strategy list based on results
+- Commit: "weekly: TIMESTAMP — X% win rate, Y strategies tested, adjust Z"
 
-## Research Priorities
+**OUTPUT:** Data-driven feedback on strategy effectiveness
 
-### High-Value Market Types
-1. **Near-term political**: Fed decisions, nominations, policy
-2. **Crypto price targets**: BTC/ETH milestones
-3. **Tech/AI releases**: Product launches, model releases
-4. **Sports with edge**: Stats-heavy, model-able
-5. **Binary events**: Clear resolution, datable outcomes
+### 5. Commit & Push (2 min)
+- Stage: research/, data/
+- Commit: `git commit -m "heartbeat: TIMESTAMP — STRATEGY_NAME bets (resolves DATE)"`
+- Push to GitHub
 
-### Research Questions for Each Market
-1. What exactly triggers YES vs NO?
-2. What's the base rate for this type of event?
-3. What information would change my view?
-4. Who has better information than me?
-5. Why is the market priced where it is?
+**OUTPUT:** Every heartbeat visible on GitHub
 
-## Paper Trading Rules
 
-**Bet sizing:**
-- Max 10% of portfolio on single bet
-- Start small ($10-25) until strategy proves out
-- Scale up only with documented edge
-- **Every heartbeat:** Place at least 1 new bet if signal exists
 
-**Entry criteria:**
-- Written reasoning required (no "gut feel" bets)
-- Must identify specific edge (why am I smarter than market?)
-- Must have exit plan (take profit / stop loss levels)
+## Strategies to Test
 
-**Tracking:**
-- Log every bet with reasoning, market ID, timestamp
-- Track which strategies win/lose
-- Calculate ROI by strategy type
-- Review performance weekly
+### Active Strategies (Current Iteration)
 
-## Success Metrics
+1. **Crypto Volatility Underpricing**
+   - Hypothesis: Daily crypto price moves are often underpriced (markets conservative on volatility)
+   - Test: Place bets on BTC/ETH daily moves >2%, <1% based on historical frequency
+   - Resolution: 1-7 days
+   - Status: Testing
 
-**Phase 1: Learning (current)**
-- 50+ paper bets placed (from daily heartbeats)
-- 10+ researched markets with deep-dive docs
-- 3-5 defined strategies with entry/exit rules
-- Consistent commits to GitHub
+2. **Sports Contrarian (Schedule TBD)**
+   - Hypothesis: Crowd overreacts to recent performance; early-week odds vs late-week adjustments
+   - Test: Place opposite-consensus bets on games resolving same day
+   - Resolution: 1 day (game time)
+   - Status: Pending sports calendar
 
-**Phase 2: Proving**
-- Win rate > 55%
-- Positive ROI after simulated fees
-- Consistent strategy that can be explained
-- Report to Tomer for real money allocation
+3. **Economic Data Edge**
+   - Hypothesis: Market prices in consensus forecasts; actual data often surprises both ways
+   - Test: Bet on jobless claims, CPI, PMI above/below consensus on release day
+   - Resolution: Same day as data release (Thursdays typically)
+   - Status: Testing on next scheduled releases
 
-**Phase 3: Scaling**
-- Real money deployment
-- Position sizing optimization
-- Portfolio diversification
-- Automated alerts/execution
-
-## Contact Rules
-
-Only notify Tomer when:
-1. **Made money** — A real bet resolved profitably or a deal closed
-2. **Need human setup** — API access, account creation, legal/billing action
-3. **Stuck** — Hit a blocker that requires human input to unblock
-4. **Exceptional opportunity** — Time-sensitive edge that needs quick decision
-
-**Work silently on everything else** — Research, paper trading, commits, monitoring, analysis.
-
-## Heartbeat Cadence
-
-- **Runs:** Every 30 minutes (non-blocking)
-- **Work per run:** ~20 minutes of actual analysis/research/trading
-- **Output per run:** Git commit pushed to GitHub
-- **Visibility:** Tomer sees progress via GitHub activity feed
-- **Interruptions:** Only on money-made / need-human-help conditions
+### Past Strategies (Long-dated, removed from active rotation)
+- Ukraine ceasefire (44 days) — too slow feedback
+- Iran strikes (44 days) — too slow feedback
+- JD Vance 2028 (1046 days) — too slow feedback
+- Fed Q1 cuts (42 days) — too slow feedback
 
 ## File Structure
 
 ```
 projects/polymarket-trader/
 ├── data/
-│   ├── market_cache.json      # Current market state
-│   ├── market_history.json    # Price history over time
-│   ├── paper_bets.json        # All paper bets (cumulative)
-│   ├── signals.json           # Generated signals
-│   └── performance.json       # P&L tracking
+│   ├── paper_bets.json                 # All paper bets (cumulative)
+│   ├── strategy_performance.json       # Win rates by strategy (weekly updates)
+│   └── weekly_summary.json             # Performance summaries per week
 ├── research/
-│   └── {market_id}.md         # Deep dive research per market
-├── strategies/
-│   └── {strategy_name}.md     # Documented strategies
-├── polymarket_trader.py       # Main trading CLI
-└── strategies.py              # Signal analysis
+│   └── SHORT_MARKETID_DATE.md          # Quick 1-pagers (resolves soon)
+├── scripts/
+│   └── resolve_bets.py                 # Mark bets as won/lost weekly
+└── polymarket_trader.py                # Main CLI
 ```
+
+## Success Criteria
+
+**Phase 1: Edge Discovery (Weeks 1-4)**
+- Test 3+ strategies
+- 20+ paper bets completed
+- Win rate >52% on any strategy
+- Identify 1 repeatable edge
+
+**Phase 2: Optimization (Weeks 5-8)**
+- Scale winning strategy
+- 50+ bets per week on best strategy
+- Win rate >55%
+- ROI >10% per week
+- Report to Tomer
+
+**Phase 3: Real Money (TBD)**
+- Deploy capital on proven strategy
+- Live trading with position sizing
+- Continuous monitoring

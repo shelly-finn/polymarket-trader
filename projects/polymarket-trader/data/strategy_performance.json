@@ -1,0 +1,43 @@
+{
+  "strategies": {
+    "crypto_volatility": {
+      "description": "Daily/weekly crypto price moves are underpriced by markets",
+      "bets_placed": 1,
+      "bets_resolved": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "roi": null,
+      "status": "testing"
+    },
+    "sports_contrarian": {
+      "description": "Crowd overreacts; early-week odds vs late-week adjustments",
+      "bets_placed": 0,
+      "bets_resolved": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "roi": null,
+      "status": "pending"
+    },
+    "economic_data_edge": {
+      "description": "Market prices consensus; actual data often surprises both ways",
+      "bets_placed": 0,
+      "bets_resolved": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "roi": null,
+      "status": "pending"
+    }
+  },
+  "weekly_summary": {
+    "week_1": {
+      "start_date": "2026-02-15",
+      "end_date": "2026-02-21",
+      "total_bets": 1,
+      "resolved_bets": 0,
+      "status": "in_progress"
+    }
+  }
+}
