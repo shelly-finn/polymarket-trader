@@ -131,3 +131,17 @@
 - Consistent, explainable strategy
 
 **Committed:** b51a334
+
+## Heartbeat Pivot to Polymarket Focus (Feb 15, 2026 - 03:15 UTC)
+- **Tomer's direction:** Focus 100% on Polymarket, not just betting but building a smart system
+- **New approach:** Research-first, bet-second. Build edge through deep analysis.
+- **Rewrote HEARTBEAT.md:** All SEC/lead-gen removed, pure Polymarket intelligence
+- **New tools:**
+  - `research_tools.py` - Market analysis, opportunity finder, research templates
+  - `research/` - Deep dive docs per market
+  - `strategies/` - Documented trading strategies
+- **Research queue created:**
+  - 567687: Russia/Ukraine ceasefire (41.5% YES, $9.5M volume)
+  - 984441: US strikes Iran by March 2026 (31.5% YES, $8.8M volume)
+  - 561974: JD Vance 2028 GOP nomination (46.6% YES, $4.1M volume)
+- **Committed:** 7642a80
