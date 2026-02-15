@@ -2,13 +2,20 @@
 
 **Goal:** Build a profitable Polymarket trading system through research, analysis, and systematic strategy testing.
 
+**Every heartbeat MUST produce work.** No empty heartbeats. Each run should result in:
+- New research (1 deep dive per heartbeat minimum)
+- New paper bets placed (documented reasoning)
+- Updated market intelligence
+- Commit to GitHub with timestamp and changes
+
 ## Each Heartbeat Does
 
-### 1. Market Intelligence (5 min)
+### 1. Market Intelligence (3 min)
 - Scan active markets for new opportunities
 - Track price movements on watched markets
 - Identify unusual volume or price swings
 - Log market state changes to `data/market_history.json`
+- **OUTPUT:** Updated cache + signals file
 
 ### 2. Research & Analysis (10 min)
 Pick ONE market and do deep research:
@@ -17,37 +24,26 @@ Pick ONE market and do deep research:
 - **Market structure**: Who's trading? Liquidity depth? Spread?
 - **Historical patterns**: Similar past markets? How did they resolve?
 - **Contrarian check**: Why might the crowd be wrong?
+- **Price analysis**: Why is it priced where it is? Mispriced?
 
 Save research to `research/MARKET_ID.md`
+**OUTPUT:** Markdown file with timestamp, sources, analysis
 
-### 3. Strategy Development (10 min)
-Build and test trading strategies:
-- **Event-driven**: News breaks → market should move
-- **Arbitrage**: Price inconsistencies across related markets
-- **Time decay**: Markets mispriced as resolution approaches
-- **Sentiment**: Crowd psychology creates mispricings
-- **Information edge**: I know something market doesn't reflect
+### 3. Paper Trading + Bet Placement (5 min)
+- Scan open bets: price changes, P&L, resolve if done
+- Find ONE trading signal from market intelligence
+- Place documented paper bet with:
+  - Specific entry reason (edge identified)
+  - Price target (where/why to exit)
+  - Position size
+- **OUTPUT:** New line in paper_bets.json + updated performance.json
 
-Document strategies in `strategies/` with:
-- Entry criteria
-- Exit criteria
-- Position sizing
-- Expected edge
-- Backtest results (if possible)
-
-### 4. Paper Trading (5 min)
-- Check open bets: price changes, P&L
-- Resolve completed bets (won/lost)
-- Place new bets ONLY with documented reasoning
-- Update performance metrics
-
-### 5. System Building (ongoing)
-Build tools that give edge:
-- [ ] News scraper for market-relevant events
-- [ ] Price alert system for watched markets
-- [ ] Resolution tracker (when markets resolve, log outcomes)
-- [ ] Smart money tracker (large position changes)
-- [ ] Cross-market correlator (related markets moving together)
+### 4. Commit & Push (2 min)
+- Stage all changes: research/, data/, strategies/
+- Commit: `git commit -m "heartbeat: TIMESTAMP — SUMMARY"`
+  - Example: `heartbeat: 2026-02-15T06:35Z — Russia/Ukraine research, placed BTC bet at $68k`
+- Push: `git push origin main`
+- **OUTPUT:** GitHub shows commit activity every heartbeat
 
 ## Research Priorities
 
@@ -71,6 +67,7 @@ Build tools that give edge:
 - Max 10% of portfolio on single bet
 - Start small ($10-25) until strategy proves out
 - Scale up only with documented edge
+- **Every heartbeat:** Place at least 1 new bet if signal exists
 
 **Entry criteria:**
 - Written reasoning required (no "gut feel" bets)
@@ -78,17 +75,18 @@ Build tools that give edge:
 - Must have exit plan (take profit / stop loss levels)
 
 **Tracking:**
-- Log every bet with reasoning
+- Log every bet with reasoning, market ID, timestamp
 - Track which strategies win/lose
 - Calculate ROI by strategy type
-- Review and iterate weekly
+- Review performance weekly
 
 ## Success Metrics
 
 **Phase 1: Learning (current)**
-- 20+ paper bets with documented reasoning
-- Research notes on 10+ markets
-- 2-3 defined strategies with entry/exit rules
+- 50+ paper bets placed (from daily heartbeats)
+- 10+ researched markets with deep-dive docs
+- 3-5 defined strategies with entry/exit rules
+- Consistent commits to GitHub
 
 **Phase 2: Proving**
 - Win rate > 55%
@@ -104,21 +102,21 @@ Build tools that give edge:
 
 ## Contact Rules
 
-**Notify Tomer only when:**
+Only notify Tomer when:
 1. **Made money** — A real bet resolved profitably or a deal closed
-2. **Need money** — Funding, subscription, or payment required
-3. **Need human setup** — API access, account creation, legal/billing action
-4. **Stuck** — Hit a blocker that requires human input to unblock
-5. **Exceptional opportunity** — Time-sensitive edge that needs quick decision
+2. **Need human setup** — API access, account creation, legal/billing action
+3. **Stuck** — Hit a blocker that requires human input to unblock
+4. **Exceptional opportunity** — Time-sensitive edge that needs quick decision
 
-**Work silently on:**
-- Paper trading (iterate, place bets, track performance)
-- Research and analysis (deep dives, strategy docs)
-- System building (code, tooling, automation)
-- Learning and strategy testing
-- Market monitoring and signal generation
+**Work silently on everything else** — Research, paper trading, commits, monitoring, analysis.
 
-**Cadence:** Heartbeat runs every 30 minutes. Most cycles will complete silently. Only interrupt when above conditions are met.
+## Heartbeat Cadence
+
+- **Runs:** Every 30 minutes (non-blocking)
+- **Work per run:** ~20 minutes of actual analysis/research/trading
+- **Output per run:** Git commit pushed to GitHub
+- **Visibility:** Tomer sees progress via GitHub activity feed
+- **Interruptions:** Only on money-made / need-human-help conditions
 
 ## File Structure
 
@@ -127,7 +125,7 @@ projects/polymarket-trader/
 ├── data/
 │   ├── market_cache.json      # Current market state
 │   ├── market_history.json    # Price history over time
-│   ├── paper_bets.json        # All paper bets
+│   ├── paper_bets.json        # All paper bets (cumulative)
 │   ├── signals.json           # Generated signals
 │   └── performance.json       # P&L tracking
 ├── research/
