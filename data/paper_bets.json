@@ -21,6 +21,17 @@
       "entry_price": null,
       "status": "open",
       "notes": "Simulation entry; price to be filled when live market checked. Research: research/ETH_72h_move_2026-02-18.md"
+    },
+    {
+      "id": "sim-20260215-3",
+      "market": "BTC 24h move >1.5%",
+      "strategy": "crypto-volatility",
+      "entry_date": "2026-02-15T10:05:00Z",
+      "resolution_date": "2026-02-16T10:05:00Z",
+      "amount": 10,
+      "entry_price": null,
+      "status": "open",
+      "notes": "Simulation entry; Research: research/BTC_24h_move_2026-02-15-2.md"
     }
   ]
 }
