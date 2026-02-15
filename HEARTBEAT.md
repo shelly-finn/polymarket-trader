@@ -1,112 +1,131 @@
-# Heartbeat - Revenue & Opportunity Loop
+# Heartbeat - Polymarket Intelligence System
 
-**Goal:** Every 30 minutes, advance revenue ideas and monitor market intelligence.
+**Goal:** Build a profitable Polymarket trading system through research, analysis, and systematic strategy testing.
 
 ## Each Heartbeat Does
 
-1. **SEC Filing Monitor** (2 min)
-   - Run: `python3 scripts/sec_monitor.py --check`
-   - Monitors watchlist: AAPL, MSFT, GOOG, AMZN, NVDA, META, TSLA
-   - Auto-extracts risk factors from new 10-K/10-Q filings
-   - Logs insights to `projects/ai-investment-agent/insights.json`
+### 1. Market Intelligence (5 min)
+- Scan active markets for new opportunities
+- Track price movements on watched markets
+- Identify unusual volume or price swings
+- Log market state changes to `data/market_history.json`
 
-2. **Scan for Leads** (2 min)
-   - Gmail: search for recent business/partnership inquiries
-   - Keywords: interested, opportunity, collaboration, budget, rate, availability
-   - If found: extract details and add to opportunities.json
+### 2. Research & Analysis (10 min)
+Pick ONE market and do deep research:
+- **News correlation**: What events could move this market?
+- **Resolution criteria**: How exactly does this resolve? Edge cases?
+- **Market structure**: Who's trading? Liquidity depth? Spread?
+- **Historical patterns**: Similar past markets? How did they resolve?
+- **Contrarian check**: Why might the crowd be wrong?
 
-3. **Advance Active Ideas** (10 min)
-   - Pick the highest-priority idea (status: idea → prototype → launched)
-   - Execute ONE concrete step toward implementation:
-     - **Idea stage**: Write service description, pitch, technical spec
-     - **Prototype stage**: Build working code, landing page, email template, automation script
-     - **Implementation**: Deploy, publish, or activate the working version
-   - Create actual deliverables (code, docs, assets) in projects/
+Save research to `research/MARKET_ID.md`
 
-4. **Generate New Ideas** (3 min)
-   - If no leads and all ideas have tasks: generate 1 new revenue idea
-   - Ideas must have: description, target market, implementation plan, effort estimate
+### 3. Strategy Development (10 min)
+Build and test trading strategies:
+- **Event-driven**: News breaks → market should move
+- **Arbitrage**: Price inconsistencies across related markets
+- **Time decay**: Markets mispriced as resolution approaches
+- **Sentiment**: Crowd psychology creates mispricings
+- **Information edge**: I know something market doesn't reflect
 
-5. **Report Back** (3 min)
-   - What was completed in this heartbeat?
-   - Links to created code/docs/prototypes
-   - Next concrete step
-   - Blockers or dependencies
+Document strategies in `strategies/` with:
+- Entry criteria
+- Exit criteria
+- Position sizing
+- Expected edge
+- Backtest results (if possible)
 
-## Implementation-Focused Actions
+### 4. Paper Trading (5 min)
+- Check open bets: price changes, P&L
+- Resolve completed bets (won/lost)
+- Place new bets ONLY with documented reasoning
+- Update performance metrics
 
-Examples of heartbeat work:
-- Write Python script to automate a process (and test it)
-- Create email outreach template (with actual copy)
-- Build a landing page (HTML/CSS in projects/)
-- Write API integration (code in projects/)
-- Create a service offering document (in projects/)
-- Set up automation workflow (gog commands, cron jobs)
-- Generate leads list with contact details
-- Draft sales pitch / value proposition
-- Create pricing model / package tiers
-- **Polymarket**: Scan markets, analyze signals, place paper bets, track outcomes
+### 5. System Building (ongoing)
+Build tools that give edge:
+- [ ] News scraper for market-relevant events
+- [ ] Price alert system for watched markets
+- [ ] Resolution tracker (when markets resolve, log outcomes)
+- [ ] Smart money tracker (large position changes)
+- [ ] Cross-market correlator (related markets moving together)
 
-## Polymarket Paper Trading
+## Research Priorities
 
-**Goal:** Test strategies with simulated bets until consistently profitable.
+### High-Value Market Types
+1. **Near-term political**: Fed decisions, nominations, policy
+2. **Crypto price targets**: BTC/ETH milestones
+3. **Tech/AI releases**: Product launches, model releases
+4. **Sports with edge**: Stats-heavy, model-able
+5. **Binary events**: Clear resolution, datable outcomes
 
-**Each heartbeat:**
-1. Scan markets: `python3 projects/polymarket-trader/polymarket_trader.py --scan`
-2. Analyze signals: `python3 projects/polymarket-trader/strategies.py`
-3. If high-conviction opportunity: place paper bet with reasoning
-4. Check open bets: `python3 projects/polymarket-trader/polymarket_trader.py --check`
-5. Update resolved bets and track P&L
+### Research Questions for Each Market
+1. What exactly triggers YES vs NO?
+2. What's the base rate for this type of event?
+3. What information would change my view?
+4. Who has better information than me?
+5. Why is the market priced where it is?
 
-**Bet criteria:**
-- Only bet when I have specific reasoning (not just "price seems wrong")
-- News correlation: recent event should move price
-- Information edge: I know something market doesn't reflect
-- Start small ($10-50 paper bets) to test strategy
-- Track win rate and ROI over time
+## Paper Trading Rules
 
-**Success threshold for real money:**
-- 20+ paper bets completed
-- Win rate > 55%
-- Positive ROI after fees
-- Consistent strategy that can be explained
+**Bet sizing:**
+- Max 10% of portfolio on single bet
+- Start small ($10-25) until strategy proves out
+- Scale up only with documented edge
 
-NOT just "research" or "plan" — actual executable deliverables.
+**Entry criteria:**
+- Written reasoning required (no "gut feel" bets)
+- Must identify specific edge (why am I smarter than market?)
+- Must have exit plan (take profit / stop loss levels)
 
-## Workflow States
-
-Each opportunity moves through:
-1. **idea** - Concept, no implementation
-2. **spec** - Technical or business specification written
-3. **prototype** - Working code/template/doc created
-4. **testing** - Test the implementation with sample data/users
-5. **launched** - Live, deployed, or activated
-6. **completed** - Revenue generated or milestone hit
-
-## Tools for Implementation
-
-- **gog**: Create docs, sheets, email drafts; send when approved
-- **gh**: GitHub CLI for repo management, issues, PRs, workflows; public lead discovery
-- **bash/python**: Write scripts, automation, integrations
-- **git**: Version control; commit every completed step
-- **web_search**: Research for building things faster
-- **gemini**: Only for complex code generation or architecture decisions
-- **Local files**: Create projects in projects/ folder
+**Tracking:**
+- Log every bet with reasoning
+- Track which strategies win/lose
+- Calculate ROI by strategy type
+- Review and iterate weekly
 
 ## Success Metrics
 
-- Ideas moving through stages (idea → prototype → launched)
-- Actual code/content created per heartbeat
-- Leads converted or contacted
-- Revenue opportunities with next-step clarity
-- Committed changes pushed to git
+**Phase 1: Learning (current)**
+- 20+ paper bets with documented reasoning
+- Research notes on 10+ markets
+- 2-3 defined strategies with entry/exit rules
 
-## Contact rules
+**Phase 2: Proving**
+- Win rate > 55%
+- Positive ROI after simulated fees
+- Consistent strategy that can be explained
+- Report to Tomer for real money allocation
 
-Work every 30 minutes as normal, but only approach Tomer (send a notification) in these cases:
-1. You made money (a paid engagement, invoice received, or clear commitment to pay)
-2. You need money (funding, subscription, or anything that requires financial action)
-3. You want Tomer to set you up with something requiring human involvement (access, OAuth approval, billing, legal)
-4. You need counseling or a decision from Tomer (strategy, negotiation, or ethical questions)
+**Phase 3: Scaling**
+- Real money deployment
+- Position sizing optimization
+- Portfolio diversification
+- Automated alerts/execution
 
-If you want different thresholds (e.g., notify for high-value leads only, or allow a daily summary), update MEMORY.md and HEARTBEAT.md accordingly.
+## Contact Rules
+
+Only notify Tomer when:
+1. Strategy is proven profitable (ready for real money)
+2. Need funding or account access
+3. Found exceptional opportunity requiring quick action
+4. Need decision on strategy direction
+
+Otherwise: work silently, build the system, prove it works.
+
+## File Structure
+
+```
+projects/polymarket-trader/
+├── data/
+│   ├── market_cache.json      # Current market state
+│   ├── market_history.json    # Price history over time
+│   ├── paper_bets.json        # All paper bets
+│   ├── signals.json           # Generated signals
+│   └── performance.json       # P&L tracking
+├── research/
+│   └── {market_id}.md         # Deep dive research per market
+├── strategies/
+│   └── {strategy_name}.md     # Documented strategies
+├── polymarket_trader.py       # Main trading CLI
+└── strategies.py              # Signal analysis
+```
