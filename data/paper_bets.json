@@ -54,6 +54,28 @@
       "entry_price": null,
       "status": "open",
       "notes": "Simulation entry; Research: research/ETH_24h_move_2026-02-15-2.md"
+    },
+    {
+      "id": "sim-20260215-7",
+      "market": "BTC 24h move >1.8%",
+      "strategy": "crypto-volatility",
+      "entry_date": "2026-02-15T11:36:00Z",
+      "resolution_date": "2026-02-16T11:36:00Z",
+      "amount": 10,
+      "entry_price": null,
+      "status": "open",
+      "notes": "Simulation entry; Research: research/BTC_24h_move_2026-02-15-4.md"
+    },
+    {
+      "id": "sim-20260215-8",
+      "market": "ETH 72h move >2.8%",
+      "strategy": "crypto-volatility",
+      "entry_date": "2026-02-15T11:36:00Z",
+      "resolution_date": "2026-02-18T11:36:00Z",
+      "amount": 10,
+      "entry_price": null,
+      "status": "open",
+      "notes": "Simulation entry; Research: research/ETH_72h_move_2026-02-18-2.md"
     }
   ]
 }
