@@ -104,13 +104,21 @@ Build tools that give edge:
 
 ## Contact Rules
 
-Only notify Tomer when:
-1. Strategy is proven profitable (ready for real money)
-2. Need funding or account access
-3. Found exceptional opportunity requiring quick action
-4. Need decision on strategy direction
+**Notify Tomer only when:**
+1. **Made money** — A real bet resolved profitably or a deal closed
+2. **Need money** — Funding, subscription, or payment required
+3. **Need human setup** — API access, account creation, legal/billing action
+4. **Stuck** — Hit a blocker that requires human input to unblock
+5. **Exceptional opportunity** — Time-sensitive edge that needs quick decision
 
-Otherwise: work silently, build the system, prove it works.
+**Work silently on:**
+- Paper trading (iterate, place bets, track performance)
+- Research and analysis (deep dives, strategy docs)
+- System building (code, tooling, automation)
+- Learning and strategy testing
+- Market monitoring and signal generation
+
+**Cadence:** Heartbeat runs every 30 minutes. Most cycles will complete silently. Only interrupt when above conditions are met.
 
 ## File Structure
 
