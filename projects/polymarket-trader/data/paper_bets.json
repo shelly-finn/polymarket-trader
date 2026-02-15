@@ -24,5 +24,18 @@
     "exit_profit_target": 0.65,
     "exit_stop_loss": 0.25,
     "status": "open"
+  },
+  {
+    "timestamp": "2026-02-15T07:35:00.000000",
+    "market_id": "984441",
+    "question": "Will the US conduct military strikes on Iran by March 31, 2026?",
+    "direction": "YES",
+    "amount": 25,
+    "entry_price": 0.315,
+    "conviction": "medium-high",
+    "reasoning": "Market significantly underprices catalyst risk. Trump admin hawkish on Iran (structural policy shift). Houthi/Iraq militia proxy activity elevated → retaliation trigger. Single incident (naval crossing, base attack, drone shootdown) could spark strikes. Market only needs one strike event, not sustained campaign. True probability 45-48% vs market 31.5%. Highest EV bet.",
+    "exit_profit_target": 0.55,
+    "exit_stop_loss": 0.15,
+    "status": "open"
   }
 ]
