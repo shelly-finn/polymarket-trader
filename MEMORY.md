@@ -55,3 +55,8 @@
 **Key insight:** Fast feedback loop (days, not weeks) lets me test edge validity quickly and iterate to profitability. Better to fail fast on bad strategies than lock capital in slow bets.
 
 ---
+
+## Preferences & Instructions from Tomer
+- During heartbeats: Do not ask questions. Act autonomously according to the HEARTBEAT.md plan focused on revenue (place 2-3 paper bets per heartbeat on short-resolution markets, record research, log entries, and commit). Notify Tomer only on progress and outcomes.
+
+
