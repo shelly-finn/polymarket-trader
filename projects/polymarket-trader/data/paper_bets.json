@@ -50,5 +50,18 @@
     "exit_profit_target": 0.60,
     "exit_stop_loss": 0.30,
     "status": "open"
+  },
+  {
+    "timestamp": "2026-02-15T08:35:00.000000",
+    "market_id": "m789012",
+    "question": "Will the Fed cut rates by 0.25%+ during Q1 2026?",
+    "direction": "NO",
+    "amount": 16,
+    "entry_price": 0.68,
+    "conviction": "medium",
+    "reasoning": "Market overpricing near-term Fed cuts. Inflation still sticky (core PCE ~2.5%+, above target). Employment strong, labor market tight. Fed messaging cautious, data-dependent. Only 2 FOMC meetings remain in Q1 (Feb 18-19, March TBD). Geopolitical tail risk (Iran strikes) could spike inflation → Fed holds. True probability 58-62% YES (38-42% NO) vs market 68% YES. Contrarian NO bet with positive EV. Imminent Feb meeting will clarify Fed intent.",
+    "exit_profit_target": 0.45,
+    "exit_stop_loss": 0.85,
+    "status": "open"
   }
 ]
