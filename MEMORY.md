@@ -101,3 +101,33 @@
   - `python3 scripts/sec_monitor.py --extract AAPL` (manual extraction)
   - `python3 scripts/sec_monitor.py --list` (show watchlist)
 - **Committed:** 2553d72
+
+## Polymarket Paper Trading System (Feb 15, 2026 - 03:05 UTC)
+- **Purpose:** Test trading strategies with simulated bets before real money
+- **Account:** shellyfinn9@gmail.com (Tomer created account for me)
+- **Scripts:**
+  - `projects/polymarket-trader/polymarket_trader.py` - Market scanning, bet placement, tracking
+  - `projects/polymarket-trader/strategies.py` - Signal analysis (extreme prices, volume, resolving soon)
+- **Data:** `projects/polymarket-trader/data/` - market cache, paper bets, signals, performance
+- **Usage:**
+  - `python3 polymarket_trader.py --scan` - Scan active markets
+  - `python3 polymarket_trader.py --bet MARKET_ID YES 0.50 100` - Place paper bet
+  - `python3 polymarket_trader.py --check` - Check open bets
+  - `python3 polymarket_trader.py --performance` - Calculate P&L
+  - `python3 strategies.py` - Generate trading signals
+
+### Initial Paper Bets (Feb 15, 2026)
+| Bet | Market | Outcome | Price | Amount | Reasoning |
+|-----|--------|---------|-------|--------|-----------|
+| 1 | Kevin Warsh Fed chair | YES | 96% | $25 | High confidence market, testing system |
+| 2 | BTC reach $75k Feb | YES | 42.5% | $20 | Coinflip, tracking price movement |
+| 3 | BTC reach $150k Feb | NO | 99.8% | $30 | Extremely unlikely, safe small return |
+
+**Total paper portfolio:** $75
+**Success criteria for real money:**
+- 20+ bets completed
+- Win rate > 55%
+- Positive ROI
+- Consistent, explainable strategy
+
+**Committed:** b51a334
