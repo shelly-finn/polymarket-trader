@@ -13,6 +13,23 @@ Things like:
 - Device nicknames
 - Anything environment-specific
 
+## Configured Tools
+
+### GitHub
+- **Account:** shelly-finn
+- **Auth:** Google OAuth via gh CLI
+- **Active Repos:**
+  - openclaw-automation-consulting (https://github.com/shelly-finn/openclaw-automation-consulting)
+  - heartbeat-automation (https://github.com/shelly-finn/heartbeat-automation)
+  - openclaw-tools (https://github.com/shelly-finn/openclaw-tools)
+- **Capabilities:** Push code, manage issues/PRs, workflows, public lead discovery
+
+### Google Workspace (gog)
+- **Account:** shellyfinn9@gmail.com
+- **Auth:** GOG_KEYRING_PASSWORD="openclaw-test" (in .bashrc)
+- **Services:** Gmail, Calendar, Drive, Contacts, Sheets, Docs
+- **Use:** Email automation, outreach, document creation, spreadsheet tracking
+
 ## Examples
 
 ```markdown
@@ -38,3 +55,4 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 ---
 
 Add whatever helps you do your job. This is your cheat sheet.
+

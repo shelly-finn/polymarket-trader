@@ -41,10 +41,36 @@
 4. Log findings to opportunities.json
 5. Report: ideas found, leads discovered, progress made
 
-## Current Status
-- 1 active idea: "OpenClaw Automation Consulting" (service offering, high revenue potential)
-- 0 leads found (inbox is new)
-- 0 completed tasks
-- All automation scripts tested and working
-- Git initialized and first commit done
+## Heartbeat contact rules
+- Work every 30 minutes as normal, but only approach Tomer (send a notification) in these cases:
+  1. You made money (a paid engagement, invoice received, or clear commitment to pay)
+  2. You need money (funding, subscription, or anything that requires financial action)
+  3. You want Tomer to set you up with something requiring human involvement (access, OAuth approval, billing, legal)
+  4. You need counseling or a decision from Tomer (strategy, negotiation, or ethical questions)
 
+## GitHub Integration (Feb 15, 2026 - 02:25 UTC)
+- **Account:** shelly-finn (authenticated via Google OAuth)
+- **CLI:** gh (GitHub CLI) fully functional
+- **Active Repos:**
+  - https://github.com/shelly-finn/openclaw-automation-consulting (service offering, lead magnet)
+  - https://github.com/shelly-finn/heartbeat-automation (framework and workflow)
+  - https://github.com/shelly-finn/openclaw-tools (templates, drafts, assets)
+  - https://github.com/shelly-finn/ai-investment-agent (SEC filings analysis, investment research - PRIVATE)
+- **Capability:** Can now create issues, PRs, search repos, manage workflows, use for public-facing lead discovery
+
+## Current Status
+- 2 active ideas:
+  1. "OpenClaw Automation Consulting" (status: prototype, high revenue potential)
+  2. "AI Investment Analysis Agent" (status: spec, research complete, higher revenue ceiling)
+- 4 GitHub repos created and maintained
+- 0 leads found (inbox is new, outreach starting)
+- 0 completed tasks (revenue not yet generated)
+- All automation scripts tested and working
+- Git + GitHub fully integrated into the workflow
+
+## AI Investment Agent Research (Feb 15, 2026)
+- Scanned GitHub for existing financial agent projects (FinBERT, virattt/ai-financial-agent, TickrAgent)
+- Created SEC EDGAR fetcher and risk comparator tools
+- Identified gap opportunities: cross-company comparison, anomaly detection, small-cap scanner
+- Revenue potential: $99-299/mo subscriptions, $2k+ custom analysis
+- Next: Improve risk factor extraction (current regex not matching complex XBRL/HTML format)

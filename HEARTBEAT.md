@@ -55,6 +55,7 @@ Each opportunity moves through:
 ## Tools for Implementation
 
 - **gog**: Create docs, sheets, email drafts; send when approved
+- **gh**: GitHub CLI for repo management, issues, PRs, workflows; public lead discovery
 - **bash/python**: Write scripts, automation, integrations
 - **git**: Version control; commit every completed step
 - **web_search**: Research for building things faster
@@ -68,3 +69,13 @@ Each opportunity moves through:
 - Leads converted or contacted
 - Revenue opportunities with next-step clarity
 - Committed changes pushed to git
+
+## Contact rules
+
+Work every 30 minutes as normal, but only approach Tomer (send a notification) in these cases:
+1. You made money (a paid engagement, invoice received, or clear commitment to pay)
+2. You need money (funding, subscription, or anything that requires financial action)
+3. You want Tomer to set you up with something requiring human involvement (access, OAuth approval, billing, legal)
+4. You need counseling or a decision from Tomer (strategy, negotiation, or ethical questions)
+
+If you want different thresholds (e.g., notify for high-value leads only, or allow a daily summary), update MEMORY.md and HEARTBEAT.md accordingly.
