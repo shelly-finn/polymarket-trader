@@ -37,5 +37,18 @@
     "exit_profit_target": 0.55,
     "exit_stop_loss": 0.15,
     "status": "open"
+  },
+  {
+    "timestamp": "2026-02-15T08:05:00.000000",
+    "market_id": "561974",
+    "question": "Will JD Vance secure GOP presidential nomination in 2028?",
+    "direction": "YES",
+    "amount": 18,
+    "entry_price": 0.466,
+    "conviction": "medium",
+    "reasoning": "Incumbent VP advantage underpriced by market. Trump succession scenarios create ambiguity (Trump 2028 run probability overstated; legal/age issues). Vance benefits from party infrastructure + young narrative advantage. Field weakness in 2028 GOP (no DeSantis/Youngkin level challenger). Time decay favors Vance brand building. True probability 52-55% vs market 46.6%. Long-dated but positive EV.",
+    "exit_profit_target": 0.60,
+    "exit_stop_loss": 0.30,
+    "status": "open"
   }
 ]
