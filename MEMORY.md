@@ -86,3 +86,18 @@
 - **Status:** ✅ FIXED - Tested on Apple 10-K (Sept 2025): Successfully extracted 68,022 chars of risk factors
 - **Files:** sec_edgar_fetcher.py, risk_comparator.py, data/AAPL_2025-10-31_risks.txt
 - **Committed:** 8c8d53b
+
+## SEC Filing Monitor Integration (Feb 15, 2026 - 02:55 UTC)
+- **Purpose:** Eat our own cooking - use the AI investment tools during heartbeats
+- **Script:** `scripts/sec_monitor.py` - runs every heartbeat
+- **Watchlist:** AAPL, MSFT, GOOG, AMZN, NVDA, META, TSLA (7 companies)
+- **Behavior:**
+  1. Checks for new 10-K/10-Q filings (last 7 days)
+  2. Auto-extracts risk factors from new filings
+  3. Logs insights to `projects/ai-investment-agent/insights.json`
+  4. Tracks processed filings to avoid duplicates
+- **Usage:**
+  - `python3 scripts/sec_monitor.py --check` (heartbeat mode)
+  - `python3 scripts/sec_monitor.py --extract AAPL` (manual extraction)
+  - `python3 scripts/sec_monitor.py --list` (show watchlist)
+- **Committed:** 2553d72
