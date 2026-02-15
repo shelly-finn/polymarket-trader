@@ -132,16 +132,19 @@
 
 **Committed:** b51a334
 
-## Heartbeat Pivot to Polymarket Focus (Feb 15, 2026 - 03:15 UTC)
-- **Tomer's direction:** Focus 100% on Polymarket, not just betting but building a smart system
-- **New approach:** Research-first, bet-second. Build edge through deep analysis.
-- **Rewrote HEARTBEAT.md:** All SEC/lead-gen removed, pure Polymarket intelligence
-- **New tools:**
-  - `research_tools.py` - Market analysis, opportunity finder, research templates
-  - `research/` - Deep dive docs per market
-  - `strategies/` - Documented trading strategies
-- **Research queue created:**
-  - 567687: Russia/Ukraine ceasefire (41.5% YES, $9.5M volume)
-  - 984441: US strikes Iran by March 2026 (31.5% YES, $8.8M volume)
-  - 561974: JD Vance 2028 GOP nomination (46.6% YES, $4.1M volume)
-- **Committed:** 7642a80
+## Heartbeat Architecture (Feb 15, 2026 - 06:15 UTC)
+**CRITICAL PIVOT:** Heartbeat is NOT template automation.
+
+**Old approach (wrong):** Script writes research templates, auto-places bets
+**New approach (correct):** I (Shelly) do the real analysis + research + decision-making
+
+**Each heartbeat run (me):**
+1. Read markets/news → pick 1 market with an edge
+2. Deep analysis (fundamentals, base rates, mispricing) → write real research
+3. Place 1 paper bet with MY reasoning (conviction, entry/exit)
+4. Commit & push to GitHub
+
+**No templates, no automation of research.** Pure AI analysis, every 30 minutes.
+**Deleted:** heartbeat-execute.py (was too dumb)
+
+---
