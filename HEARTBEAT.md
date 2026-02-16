@@ -10,7 +10,9 @@
 
 **Every heartbeat MUST produce work:** Place 2-3 bets on markets resolving within 7 days, document strategy, commit results.
 
-## Each Heartbeat (30 min cycle)
+## Each Heartbeat (hourly cycle — runs only between 08:00–20:00 local time)
+
+Note: Do not run heartbeats between 20:00 and 08:00 local time; scheduled to run at the top of each hour during daytime.
 
 ### 1. Short-Resolution Market Scan (3 min)
 - Identify markets resolving in next **1-7 days ONLY**
